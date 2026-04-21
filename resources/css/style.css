@@ -3,7 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-html{
+html,
+body{
     background-color: #ffffff;
     color: #555;
     font-family: Fjalla One,sans-serif;
@@ -11,6 +12,7 @@ html{
     font-size: 20px;
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;     /* added this myself */
+    /* overflow: hidden; */
 }
 .row{
     max-width: 1140px;
@@ -21,6 +23,7 @@ header{
     height: 100vh;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* image is fixed in the background */
 }
 h1{
     margin-top: 0;
@@ -41,7 +44,8 @@ h1{
     transform: translate(-50%,-50%);
 }
 .btn:link,
-.btn:visited{
+.btn:visited,
+input[type=submit]{
     display: inline-block;
     padding: 10px 30px;
     text-decoration: none;
@@ -50,7 +54,8 @@ h1{
     transition: background-color 0.2s,border 0.2s,color 0.2s;
 }
 .btn-full:link,
-.btn-full:visited{
+.btn-full:visited,
+input[type=submit]{
     background-color: #f38322;
     color: #fff;
     border: 1px solid #f38322;
@@ -61,14 +66,18 @@ h1{
     border: 1px solid #f38322;
     color: #f38322;
 }
-.btn:hover,.btn:active{
+.btn:hover,
+.btn:active,
+input[type=submit]{
     background-color: #cf6d17;
 }
 .btn-ghost:hover,.btn-ghost:active{
     border: 1px solid #cf6d17;
     color: white;
 }
-.btn-full:hover,.btn-full:active{
+.btn-full:hover,
+.btn-full:active,
+input[type=submit]{
     border: 1px solid #cf6d17;
 }
 .logo{
@@ -272,4 +281,164 @@ a:active{
 @keyframes h2-expand {
     from {width: 0px;}
     to {width: 100px;}
+}
+
+.section-testimonials{
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(/resources/img/back-cust.png);
+    background-size: cover;
+    background-attachment: fixed; /* image is fixed in the background */
+}
+blockquote{
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    margin-top: 40px;
+    position: relative;
+}
+cite{
+    font-size: 90%;
+    display: block;
+    margin-top: 25px;
+}
+.section-testimonials h2,
+.section-testimonials blockquote,
+.section-testimonials cite{
+    /* to override simple-grid color */
+    color: #fff;
+}
+.box cite img{
+    height: 65px;
+    width: auto;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+blockquote::before{
+    content: "\201C";
+    font-size: 500%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -3px;
+}
+
+.section-plans{
+    background-color: #f4f4f4;
+}
+.plan-box{
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+}
+.plan-box div{
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+}
+.plan-box .plan-price{
+    font-size: 250%;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: #e67e22;
+}
+.plan-box .plan-price-meal{
+    font-size: 80%;
+}
+.plan-box .plan-price span{
+    font-size: 30%;
+    font-weight: 300;
+    color: #e67e22;
+}
+.plan-box ul{
+    list-style: none;
+}
+.plan-box ul li{
+    padding: 5px 0;
+}
+.plan-box div:last-child{
+    border: 0;
+    text-align: center;
+}
+.plan-box div:first-child{
+    background-color: #fcfcfc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.contact-form{
+    width: 60%;
+    margin: 0 auto;
+}
+input[type=text],
+input[type=email],
+select,
+textarea{
+    width: 200%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+textarea{
+    height: 100%;
+}
+input[type=checkbox]{
+    margin: 10px 5px 10px 0px;
+}
+footer{
+    background-color: #333;
+    font-size: 80%;
+    padding: 50px;
+}
+.footer-nav{
+    list-style: none;
+    float: left;
+    width: 250%;
+}
+.social-links{
+    list-style: none;
+    float: right; 
+}
+footer .col-3-sm:last-child {
+    float: right;
+}
+.footer-nav li,
+.social-links li{
+    display: inline-block;
+    margin-right: 20px;
+}
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited{
+    text-decoration: none;
+    border: 0;
+    color: #888;
+}
+.social-links li ion-icon{
+    color: #888;
+}
+.footer-nav li a:hover,
+.social-links li ion-icon:hover{
+    color: #fff;
+}
+footer p{
+    color: #888;
+    text-align: center;
+    font-size: 90%;
+    margin-top: 20px;
+}
+.social-links .fb:hover{
+    color: #3b5998;
+}
+.social-links .google:hover{
+    color: #dd4b39;
+}
+.social-links .whatsapp:hover{
+    color: #25D366;
+}
+.social-links .insta:hover{
+    color: #405DE6;
+}
+.social-links li a:link,
+.social-links li a:visited{
+    font-size: 160%;
 }
